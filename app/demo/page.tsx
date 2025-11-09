@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -19,6 +19,13 @@ export default function DemoPage() {
   const [activeTab, setActiveTab] = useState<DemoTab>("voice")
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(0)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight)
+    }
+  }, [])
 
   const demoFeatures: Record<DemoTab, DemoFeature> = {
     voice: {
@@ -73,7 +80,7 @@ export default function DemoPage() {
               key={i}
               className="absolute w-2 h-2 bg-white/20 rounded-full"
               animate={{
-                y: [0, -window.innerHeight || 0, 0],
+                y: [0, -windowHeight || 0, 0],
                 opacity: [0, 1, 0],
               }}
               transition={{
