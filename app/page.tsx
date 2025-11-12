@@ -288,6 +288,85 @@ export default function App() {
           </div>
         </section>
 
+        {/* Team Section */}
+        <section className="py-16 sm:py-20 px-4 bg-gradient-to-b from-black to-slate-900">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl sm:text-5xl font-bold mb-3 bg-gradient-to-r from-emerald-400 to-orange-400 bg-clip-text text-transparent">
+                Our Team
+              </h2>
+              <p className="text-lg text-gray-400">Meet the people behind ManuBot</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Muhammad Anique",
+                  role: "Team Leader",
+                  linkedin: "https://www.linkedin.com/in/muhammad-anique-300828266/",
+                  gmail: "mailto:muhammadanique81@gmail.com",
+                },
+                {
+                  name: "Sajjad Ahmad",
+                  role: "Team Member",
+                  linkedin: "https://www.linkedin.com/in/sajjadahmad-dev/",
+                  gmail: "mailto:sajjadahmad.code@gmail.com",
+                },
+                {
+                  name: "Tayyaba Mustafa",
+                  role: "Team Member",
+                  linkedin: "https://www.linkedin.com/in/tayyaba-mustafa-97ba1731b/",
+                  gmail: "mailto:tayyaba.mustafa@gmail.com",
+                },
+                {
+                  name: "Izzah Khursheed",
+                  role: "Team Member",
+                  linkedin: "https://www.linkedin.com/in/izzah-khursheed/",
+                  gmail: "mailto:izzah.khursheed@gmail.com",
+                },
+              ].map((member, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="group"
+                >
+                  <div className="relative p-6 rounded-2xl border backdrop-blur-xl bg-slate-900/60 border-white/10 hover:border-emerald-500/50 transition-all text-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-orange-500 mx-auto mb-4 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-white">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-emerald-400 font-medium text-sm mb-4">{member.role}</p>
+                    <div className="flex justify-center gap-4">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-emerald-400 transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                      <a
+                        href={member.gmail}
+                        className="text-gray-400 hover:text-emerald-400 transition-colors"
+                      >
+                        Gmail
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Stats Section */}
         <section className="py-16 px-4 bg-black">
           <div className="max-w-6xl mx-auto">
