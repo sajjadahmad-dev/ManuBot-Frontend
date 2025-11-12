@@ -321,13 +321,13 @@ export default function App() {
                   name: "Tayyaba Mustafa",
                   role: "Team Member",
                   linkedin: "https://www.linkedin.com/in/tayyaba-mustafa-97ba1731b/",
-                  gmail: "mailto:tayyaba.mustafa@gmail.com",
+                  gmail: "mailto:tayyabamustafa1078@gmail.com",
                 },
                 {
                   name: "Izzah Khursheed",
                   role: "Team Member",
                   linkedin: "https://www.linkedin.com/in/izzah-khursheed/",
-                  gmail: "mailto:izzah.khursheed@gmail.com",
+                  gmail: "mailto:izzahkhursheed1800@gmail.com",
                 },
               ].map((member, i) => (
                 <motion.div
